@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#101820">
+	<title>Thala 7 | The Mahi Memory Room</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<style>
+		.image-one { background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/MS_Dhoni_in_2011.jpg?width=1100'); }
+		.image-two { background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/MS_Dhoni_2.jpg?width=900'); }
+		.image-three { background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Mahendra_Singh_Dhoni_batting.JPG?width=900'); }
+		.image-four { background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Dhoni_behind_Stumps.jpg?width=900'); }
+		.quote-card { min-height: 450px; }
+		.tribute-note { display: grid; grid-template-columns: 1.05fr .95fr; margin-top: 70px; background: #d9e0d9; color: #10202a; min-height: 480px; border-top: 1px solid rgba(231,184,75,.65); }
+		.tribute-photo { min-height: 480px; background: url('https://assets.bcci.tv/bcci/articles/1749495575_Hall-Of-Fame-16x9.png') center / cover; filter: saturate(.78); position: relative; }
+		.tribute-photo:after { content: 'ICC HALL OF FAME / 2025'; position: absolute; left: 25px; bottom: 22px; color: #f5f1e9; font: 10px 'DM Mono',monospace; letter-spacing: .15em; }
+		.tribute-copy { padding: clamp(34px, 6vw, 80px); display: flex; flex-direction: column; justify-content: center; position: relative; }
+		.tribute-copy:before { content: '07'; position: absolute; top: 26px; right: 35px; color: rgba(16,32,42,.1); font: 700 100px/.8 'Playfair Display',serif; }
+		.tribute-copy .eyebrow { color: #8f6817; }
+		.tribute-copy h2 { font-size: clamp(2.7rem, 5vw, 5.5rem); line-height: .94; letter-spacing: -.07em; margin: 24px 0; }
+		.tribute-copy h2 em { color: #8f6817; }
+		.tribute-copy p { max-width: 480px; color: #4f6062; line-height: 1.75; font-size: 14px; }
+		.tribute-signoff { color: #8f6817 !important; font: 500 10px 'DM Mono', monospace; letter-spacing: .12em; text-transform: uppercase; margin-top: 26px; }
+		.legacy-section { padding: 130px 0 40px; background: radial-gradient(circle at 80% 10%, rgba(231,184,75,.08), transparent 30%); }
+		.legacy-heading { display: flex; justify-content: space-between; align-items: end; border-bottom: 1px solid var(--line); padding-bottom: 30px; margin-bottom: 18px; }
+		.legacy-heading h2 { font-size: clamp(2.8rem, 6vw, 6rem); line-height: .9; letter-spacing: -.07em; margin: 22px 0 0; }
+		.legacy-heading h2 em { color: var(--yellow); }
+		.legacy-intro { max-width: 230px; color: #9ca9a6; font-size: 12px; line-height: 1.6; }
+		.legacy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); }
+		.legacy-card { background: rgba(23,45,56,.58); padding: 35px 30px 40px; min-height: 310px; transition: background .35s ease, transform .35s ease; }
+		.legacy-card:hover { background: #203d49; transform: translateY(-5px); }
+		.legacy-card h3 { font: 600 26px/1 'Playfair Display', serif; margin: 25px 0 20px; color: #f5f1e9; }
+		.legacy-card p { color: #aeb9b4; line-height: 1.7; font-size: 13px; margin-bottom: 25px; }
+		.legacy-list { list-style: none; padding: 0; margin: 0; color: #d5dbd5; font: 11px/1.7 'DM Mono', monospace; }
+		.legacy-list li { border-top: 1px solid var(--line); padding: 11px 0; transition: padding-left .25s ease; }
+		.legacy-list li:hover { padding-left: 6px; }
+		.legacy-list strong { color: var(--yellow); font-weight: 500; }
+		.creator-credit { text-align: right; color: #708286; font: 10px 'DM Mono', monospace; letter-spacing: .14em; text-transform: uppercase; margin: 55px 0 8px; }
+		.creator-credit strong { color: var(--yellow); font-weight: 500; }
+		@media(max-width:700px) { .tribute-photo:after { left: 18px; bottom: 16px; font-size: 8px; } .tribute-copy:before { font-size: 75px; right: 20px; } .legacy-section { padding: 80px 0 20px; } .legacy-heading { display: block; } .legacy-intro { margin-top: 28px; } .legacy-grid { display: block; background: transparent; } .legacy-card { border-bottom: 1px solid var(--line); padding: 30px 0; min-height: 0; } }
+		@media(max-width:700px) { .tribute-note { display: block; margin-top: 45px; } .tribute-photo { min-height: 320px; } .tribute-copy { padding: 38px 25px 48px; } }
+	</style>
+</head>
+<body>
+	<div class="photo-backdrop" aria-hidden="true"></div>
+	<main>
+		<section class="lock-screen" id="lockScreen">
+			<div class="lock-copy">
+				<p class="eyebrow"><span class="dot"></span> A private archive for Mahi fans</p>
+				<h1>Welcome to<br><em>the Mahi room.</em></h1>
+				<p class="intro">A living scrapbook of the calm, the chase, and the countless moments that made a captain unforgettable.</p>
+				<form class="unlock-form" id="unlockForm">
+					<label for="password">Enter the secret password</label>
+					<div class="password-row">
+						<input id="password" type="password" autocomplete="off" placeholder="Seven is the answer" required>
+						<button type="submit" aria-label="Unlock the memory room">Enter <span>↗</span></button>
+					</div>
+					<p class="error" id="errorMessage" role="alert">That one doesn't open the room. Try again.</p>
+				</form>
+				<p class="hint">Hint: the number on his back, in lowercase.</p>
+			</div>
+			<div class="lock-mark" aria-hidden="true"><span>07</span><small>THE FINISHER</small></div>
+		</section>
+
+		<section class="memory-room" id="memoryRoom" aria-hidden="true">
+			<nav class="topbar">
+				<a class="brand" href="#top"><span class="brand-number">07</span><span>MAHI<br><b>MEMORIES</b></span></a>
+				<span class="archive-status"><span class="dot"></span> Archive unlocked</span>
+				<button class="lock-button" id="lockButton" type="button">Lock room <span>⌁</span></button>
+			</nav>
+
+			<header class="room-header" id="top">
+				<div>
+					<p class="eyebrow">The Mahi memory room / 01—07</p>
+					<h2>Some moments<br>stay <em>forever.</em></h2>
+				</div>
+				<div class="header-note"><span class="line"></span><p>For the ones who believe<br>in finishing with a smile.</p></div>
+			</header>
+
+			<div class="gallery" id="gallery">
+				<article class="memory-card featured" data-title="The night the cup came home" data-description="28 years. One final six. A memory written into every Indian cricket fan's heart.">
+					<div class="memory-image image-one"></div><div class="card-content"><span class="card-index">01 / THE NIGHT</span><h3>The night the cup<br>came home</h3><button class="view-memory" type="button">View memory <span>↗</span></button></div>
+				</article>
+				<article class="memory-card" data-title="Captain cool" data-description="A quiet gaze, a steady hand, and a team that trusted him completely.">
+					<div class="memory-image image-two"></div><div class="card-content"><span class="card-index">02 / LEADERSHIP</span><h3>Captain<br>cool</h3><button class="view-memory" type="button">View memory <span>↗</span></button></div>
+				</article>
+				<article class="memory-card" data-title="The helicopter shot" data-description="There are shots, and then there is the one only Mahi could make look effortless.">
+					<div class="memory-image image-three"></div><div class="card-content"><span class="card-index">03 / THE SHOT</span><h3>Pure<br>helicopter</h3><button class="view-memory" type="button">View memory <span>↗</span></button></div>
+				</article>
+				<article class="memory-card" data-title="Always a keeper" data-description="Behind the stumps, every split second became instinct. The gloves told their own story.">
+					<div class="memory-image image-four"></div><div class="card-content"><span class="card-index">04 / BEHIND THE STUMPS</span><h3>Always<br>a keeper</h3><button class="view-memory" type="button">View memory <span>↗</span></button></div>
+				</article>
+				<article class="memory-card quote-card"><div class="quote-mark">“</div><blockquote>We still stand<br>with you, Mahi.<br>We miss you<br>every single day.</blockquote><cite>— From every die-hard fan who still believes</cite></article>
+			</div>
+			<footer><span>Built with love, for Thala fans.</span><span>Scroll through the memories <b>↓</b></span><span>Archive no. 07</span></footer>
+			<section class="tribute-note" aria-label="A note for MS Dhoni">
+				<div class="tribute-photo" role="img" aria-label="MS Dhoni at his ICC Hall of Fame induction"></div>
+				<div class="tribute-copy">
+					<p class="eyebrow">A note from the fans / always number 07</p>
+					<h2>Thank you, <em>Mahi.</em></h2>
+					<p>You gave India more than trophies. You gave us belief when the match felt lost, calm when the pressure was loud, and a reason to dream until the very last ball. You led India to the 2007 World T20, the 2011 World Cup, and the 2013 Champions Trophy. We still support you, we still miss you, and we will always be proud to call you our captain.</p>
+					<p class="tribute-signoff">With love and endless respect, India</p>
+				</div>
+			</section>
+			<section class="legacy-section" aria-label="MS Dhoni's legacy">
+				<div class="legacy-heading">
+					<div><p class="eyebrow">The legacy / 2004 onwards</p><h2>More than<br><em>numbers.</em></h2></div>
+					<p class="legacy-intro">A career built on courage, calm decisions, and the belief that the last ball is never the end.</p>
+				</div>
+				<div class="legacy-grid">
+					<article class="legacy-card">
+						<span class="card-index">01 / FOR INDIA</span><h3>He gave a nation belief.</h3>
+						<p>As India's captain, Mahi turned pressure into possibility and led a golden generation with an unshakable calm.</p>
+						<ul class="legacy-list"><li><strong>2007</strong> World T20 champions</li><li><strong>2010, 2016</strong> Asia Cup wins</li><li><strong>2011</strong> Cricket World Cup champions</li><li><strong>2013</strong> Champions Trophy winners</li></ul>
+					</article>
+					<article class="legacy-card">
+						<span class="card-index">02 / THE CAREER</span><h3>A complete cricketer.</h3>
+						<p>India's fearless wicketkeeper-batter became one of cricket's greatest finishers, captains, and decision-makers.</p>
+						<ul class="legacy-list"><li><strong>350</strong> ODI appearances for India</li><li><strong>17,266</strong> international runs</li><li><strong>634</strong> international dismissals</li><li><strong>332</strong> matches as India's captain</li></ul>
+					</article>
+					<article class="legacy-card">
+						<span class="card-index">03 / FOR CSK</span><h3>Whistle podu, forever.</h3>
+						<p>He made Chennai his home, made yellow feel like family, and built a legacy that belongs to every Super King.</p>
+						<ul class="legacy-list"><li><strong>5</strong> IPL titles: 2010, 2011, 2018, 2021, 2023</li><li><strong>2</strong> Champions League T20 titles</li><li><strong>10</strong> IPL final appearances with CSK</li><li><strong>2008–2025</strong> Chennai's beloved captain and Thala</li></ul>
+					</article>
+				</div>
+			</section>
+			<p class="creator-credit">Created by your die-hard fan <strong>Ranjan</strong></p>
+		</section>
+	</main>
+	<div class="memory-modal" id="memoryModal" aria-hidden="true"><div class="modal-inner"><button class="close-modal" id="closeModal" type="button" aria-label="Close memory">×</button><p class="eyebrow">A memory worth keeping</p><h2 id="modalTitle"></h2><p id="modalDescription"></p></div></div>
+	<script src="script.js"></script>
+</body>
+</html>
